@@ -49,24 +49,20 @@ I have created two plans, Plan A and Plan B. Plan A is the main plan, and Plan B
 
 #### Plan A
 
-- Front End: Next.js, TailwindCSS
+- Front End: Next.js, TailwindCSS, ShadCN, Axios, React-router-dom
 - Back End: Node.js, Express
 - Database: PostgreSQL hosted on Supabase, using GraphQL for querying
 - Hosting: Github Pages
 - Domain: Whatsthenext.one
-- Front End Libraries: Axios, React-router-dom
-- Back End Libraries: Express
 
 #### Plan B (Backup)
 
-- Front End: Next.js, MaterialUI
-- Back End: Node.js, Express
+- Front End: Next.js, MaterialUI, Redux, react-router-dom
+- Back End: Node.js, Express, Express
 - Headless CMS: Strapi
 - Autocomplete: Algolia
 - Hosting: Vercel
 - Domain: Whatsthenext.one
-- Front End Libraries: Redux, react-router-dom
-- Back End Libraries: Express
 
 ### APIs
 
