@@ -16,7 +16,7 @@ Right now, there isn't there a good website to find the next book in a book seri
 [GoodReads](https://www.goodreads.com) -> Great UX, but suffers from a lack of comprehensive series listings, the the "series lists" are user compiled.
 Google Search Featured Snippet -> Parses data from the first page of Google Results, and bubbles the best result up the to the top. This isn't always easy to read, nor is it comprehensive, sometimes books just have no results.
 
-![Google Featured Snippet](./google_feature_snippet.png)
+![Google Featured Snippet](./Other/GoogleFeaturedSnippet.png)
 *Example of a Google Search Featured Snippet*
 
 ### User Profile
@@ -79,14 +79,14 @@ The sitemap will be simple, with no navigation at the top, except for the search
 **The sitemap will be as follows:**
 
 - Navigation:
-  - Home: The home page will contain a search bar (which can be used to search author, book or series), a list of popular series (links to the series page), and a list of popular authors (links to the author page).
-  - Search Results: The search results page will display a list of search results, limited to 10 results at a time. The user can navigate through the results using pagination. Each search result will contain a link to the book, author or series page.
+  - Home: The home page will contain a search bar (which can be used to search author, book or series), a list of popular series (links to the series page), and a list of popular authors (links to the author page). Users will be able to select from the dropdown menu to search for the next book in a series.
+  ~~- Search Results: The search results page will display a list of search results, limited to 10 results at a time. The user can navigate through the results using pagination. Each search result will contain a link to the book, author or series page. **(This page can be replaced with instead allowing the users to select from the search bar dropdown menu instead of navigating to a new page)**~~
 - Content:
-  - Series: The series page will contain a list of all the books in a series, each their icon, the year they were published, a "Read More" button (links to the book page) and a "Buy Now" button (links to affiliate amazon link).
-  - Book: The book page will contain the book's icon, title, year they were published, author, and a teaser blurb (still to be sourced)
+  - Series: The series page will contain a list of all the books in a series, each with their first book front page/icon, the year they were published, a "Read More" button (links to the book page) and a "Buy Now" button (links to affiliate amazon link).
+  - Book: The book page will contain the book's icon/front page (storing this much data may be too much, may need to be sourced, best saved for later development), title, year they were published, author, and a teaser blurb (still to be sourced)
   - Author: The author page will have a link to a short bio, their website and contain a list of all the books (and their title/icon/year they were published) by that author, in order, grouped by series, each with a "Read More" button (links to the book page) and a "Buy Now" button (links to affiliate amazon link), similar to the series page.
 - Misc:
-  - Contact: The contact page will contain a contact form, allowing users to send feedback to the website owner.
+  - Contact: The contact page will contain a contact form, allowing users to send feedback to the website owner. (This page may be replaced by a contact form in the footer of the website)
 
 ### Authentication
 
@@ -94,12 +94,37 @@ The website will not require authentication, as the point of the website is to p
 
 ### Mockups
 
-//TODO add mockups
-Provide visuals of your app's screens. You can use pictures of hand-drawn sketches, or wireframing tools like Figma.
+#### Color Palette
+
+Still to be decided, likely to use a default/built-in palette
+
+#### Typography
+
+Still to be decided, should be easy to read, maybe sans-serif?
+
+#### Visual Mockups
+
+![Home Page](./Mockups/HomePage.png)
+*Mockup 1: Home Page*
+
+![Search Results Page](./Mockups/SearchResultsPage.png)
+*Mockup 2: Search Results Page*
+
+![Series Page](./Mockups/SeriesPage.png)
+*Mockup 3: Series Page*
+
+![Book Page](./Mockups/BookPage.png)
+*Mockup 4: Book Page*
+
+![Author Page](./Mockups/AuthorPage.png)
+*Mockup 5: Author Page*
+
+![Contact Page](./Mockups/ContactPage.png)
+*Mockup 6: Contact Page*
 
 ### Data
 
-The data will be stored in a PostgreSQL database, hosted on Supabase. The data will be sourced from a variety of different websites, including:
+The data will be stored in a PostgreSQL database, hosted on Supabase (or some other backend provider). Postgres is a relational database, which will allow for easy querying of the data and was chosen for its built-in ability to fuzzy search. The data will be sourced from a variety of different websites, including:
 
 - BookSeriesInOrder
 - GoodReads
@@ -109,23 +134,23 @@ The main portion of the data will be scraped from BookSeriesInOrder.com, as it c
 
 #### Database Schema
 
-![Database Schema](./DbSchema.png)
-*Figure 1: Database schema showing relationships between Users, Authors, Books, and Series tables*
+![Database Schema](./Diagrams/DbSchema.png)
+*Diagram 1: Database schema showing relationships between Users, Authors, Books, and Series tables*
 
 #### CRUD Flow
 
-![CRUD Flow](./CrudFlow.png)
-*Figure 2: CRUD operations flow between Client, Frontend, Backend, and Database*
+![CRUD Flow](./Diagrams/CrudFlow.png)
+*Diagram 2: CRUD operations flow between Client, Frontend, Backend, and Database*
 
 #### Authentication Flow
 
-![Authentication Flow](./AuthFlow.png)
-*Figure 3: User authentication flow using JWT tokens*
+![Authentication Flow](./Diagrams/AuthFlow.png)
+*Diagram 3: User authentication flow using JWT tokens*
 
 #### API Endpoint Flow
 
-![API Endpoint Flow](./ApiEndpointFlow.png)
-*Figure 4: Overview of API endpoints and their relationships*
+![API Endpoint Flow](./Diagrams/ApiEndpointFlow.png)
+*Diagram 4: Overview of API endpoints and their relationships*
 
 These diagrams provide a visual representation of the database structure, data flow, authentication process, and API endpoints for the "What's the next one?" application, but are not final iterations nor exhaustive.
 
@@ -451,9 +476,9 @@ Response:
 
 Here are additional features and improvements that can be implemented after the MVP is completed or if there is extra time before the Capstone due date. These are ordered from the most practical and impactful to the least useful changes:
 
-- **Integration with External Book APIs**
-  - Incorporate data from external sources like Google Books API or Open Library to enrich the database.
-  - Automatically update book information and availability from these APIs.
+- **Pictures**
+  - Storing book pictures/front pages may be too much, may need to be sourced, best saved for later development.
+  - Store author headshots may also be too much, best saved for later development.
 
 - **Internationalization and Multilingual Support**
   - Expand the website's language options to cater to a global audience.
